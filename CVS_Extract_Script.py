@@ -30,6 +30,6 @@ ConnectionToDatabase(username,password,host,port,database,sslmode)
 connection_string = f"postgresql+psycopg2://{username}:{password}@{host}:{port}/{database}?sslmode={sslmode}"
 engine = create_engine(connection_string)
 
-df.to_sql("CovidCSVTest", engine, schema="raw", if_exists="replace", index=False)
+df.to_sql("NetflixData", engine, schema="raw", if_exists="replace", index=False)
 
 print(" Data written to Neon!")
