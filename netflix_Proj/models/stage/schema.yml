@@ -1,0 +1,21 @@
+version: 2
+
+sources:
+  - name: raw                 # The first part of source('raw', 'NetflixData')
+    schema: raw               # Actual schema in your DB (change if needed, e.g., public)
+    tables:
+      - name: NetflixData     # The second part of source('raw', 'NetflixData')
+
+models:
+  - name: stg_netflix
+    description: "This model processes Netflix data for analysis"
+    columns:
+      - name: id
+        description: "The primary key for this table"
+        data_tests:
+          - unique
+          - not_null
+      - name: Catagory
+        description: "The category of the Netflix content"  
+
+
