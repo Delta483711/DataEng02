@@ -8,16 +8,16 @@ sources:
         description: "This is the raw Netflix data source containing information about Netflix content."
         
 models:
-  - name: stg_netflix
-    description: "This model converts the data types to more appropriate ones and renames columns for better readability."
+  - name: int_netflix
+    description: "This model transforms some of the columns so that there are no null rows."
     columns:
       - name: id
-        description: "The primary key for this table"
+        description: "{{ doc('id') }}"
         data_tests:
           - unique
           - not_null
-      - name: Catagory
-        description: "The category of the Netflix content for example, Movie or TV Show"  
+      - name: Category
+        description: "The category of the Netflix content, for example, Movie or TV Show"  
         data_tests:
           - not_null
       - name: Title
@@ -25,17 +25,14 @@ models:
       - name: Director
         description: "The director(s) of the Netflix content"
       - name: Cast 
-        description: "The a list of actors who appeard in the Netflix content"
+        description: "A list of actors who appeared in the Netflix content"
       - name: Country
         description: "The country where the Netflix content was produced"
-      - name: releasedate
+      - name: release_date
         description: "The release date of the Netflix content"
       - name: rating
-        description: "The rating of the Netflix content for exxample, TV-MA, TV-14, etc."  
-      - name: duration
-        description: "The duration of the Netflix content, applicable for movies and tv shows"
-
-
-
-
-
+        description: "{{ doc('rating') }}"
+      - name: duration_min
+        description: "The duration of the Netflix content, applicable for movies"
+      - name: duration_season
+        description: "The number of seasons for TV shows"

@@ -6,7 +6,7 @@ SELECT
     CAST(TRIM(t1.id, 's') AS INT ) AS id,
     t1.category,
     COALESCE(t1.title,'Untitled') AS title,
-    COALESCE(t1.director,'N/A') AS director,
+    COALESCE(t1.director,'Unknown') AS director,
     COALESCE(t1.cast,'N/A') AS cast,
     COALESCE(t1.country,'N/A') AS country,
     t1.releasedate AS release_date,
