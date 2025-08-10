@@ -2,12 +2,12 @@
 netflix_Proj:
   outputs:
     dev:
-      dbname: netflix
-      host: ep-cool-surf-abds13vc-pooler.eu-west-2.aws.neon.tech
-      pass: npg_p5mJ3qEGDBvX
+      dbname: "{{ env_var('DB_NAME') }}"
+      host: "{{ env_var('DB_HOST') }}"
+      pass: "{{ env_var('DB_PASSWORD') }}"
       port: 5432
       schema: raw
       threads: 10
       type: postgres
-      user: neondb_owner
+      user: "{{ env_var('DB_USERNAME') }}"
   target: dev
