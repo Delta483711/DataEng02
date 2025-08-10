@@ -4,7 +4,7 @@ netflix_Proj:
     dev:
       dbname: netflix
       host: ep-cool-surf-abds13vc-pooler.eu-west-2.aws.neon.tech
-      pass:  "{{ env_var('db_password') }}"
+      pass: npg_p5mJ3qEGDBvX
       port: 5432
       schema: raw
       threads: 10
