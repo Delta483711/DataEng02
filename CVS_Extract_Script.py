@@ -2,6 +2,7 @@
 import pandas as pd
 from init import ConnectionToDatabase
 from sqlalchemy import create_engine
+import os 
 
 # Raw file link from GitHub
 url = "https://raw.githubusercontent.com/Delta483711/DataEng02/main/Netflix_Dataset.csv"
@@ -12,12 +13,13 @@ df = pd.read_csv(url)
 # Show the first few rows
 #print(df.head())
 
+db_password = os.getenv("DB_PASSWORD")
 
 ##### Connect to Neon or any other database ######
 
 ## Declare Connection variables 
 username = 'neondb_owner'
-password = 'npg_p5mJ3qEGDBvX'
+password = db_password
 host = 'ep-cool-surf-abds13vc-pooler.eu-west-2.aws.neon.tech'
 port = '5432'
 database = 'netflix'
