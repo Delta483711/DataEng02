@@ -4,7 +4,7 @@ sources:
   - name: raw                 # The first part of source('raw', 'NetflixData')
     schema: raw               # Actual schema in your DB (change if needed, e.g., public)
     tables:
-      - name: NetflixData     # The second part of source('raw', 'NetflixData')
+      - name: stg_netflix     # The second part of source('raw', 'NetflixData')
         description: "This is the raw Netflix data source containing information about Netflix content."
         
 models:
@@ -12,7 +12,7 @@ models:
     description: "This model transforms some of the columns so that there are no null rows."
     columns:
       - name: id
-        description: "{{ doc('id') }}"
+        description: "TEST"
         data_tests:
           - unique
           - not_null
@@ -31,7 +31,7 @@ models:
       - name: release_date
         description: "The release date of the Netflix content"
       - name: rating
-        description: "{{ doc('rating') }}"
+        description: "TEST"
       - name: duration_min
         description: "The duration of the Netflix content, applicable for movies"
       - name: duration_season
