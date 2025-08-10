@@ -4,7 +4,7 @@ netflix_Proj:
     dev:
       dbname: "{{ env_var('DB_NAME') }}"
       host: "{{ env_var('DB_HOST') }}"
-      pass: "{{ env_var('DB_PASSWORD') }}"
+      password: "{{ env_var('DB_PASSWORD') }}"
       port: 5432
       schema: raw
       threads: 10
