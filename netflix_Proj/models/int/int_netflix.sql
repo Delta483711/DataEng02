@@ -41,5 +41,4 @@ UpdateDuration AS
         updt2 t2
 )
 
-
 SELECT * FROM UpdateDuration
