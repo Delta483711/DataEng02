@@ -1,4 +1,5 @@
 ## Import Librairies 
+import os
 import pandas as pd
 from init import ConnectionToDatabase
 from sqlalchemy import create_engine
@@ -16,11 +17,11 @@ df = pd.read_csv(url)
 ##### Connect to Neon or any other database ######
 
 ## Declare Connection variables 
-username = 'neondb_owner'
-password = 'npg_p5mJ3qEGDBvX'
-host = 'ep-cool-surf-abds13vc-pooler.eu-west-2.aws.neon.tech'
+username = os.getenv('DB_USERNAME')
+password = os.getenv('DB_PASSWORD')
+host = os.getenv('DB_HOST')
 port = '5432'
-database = 'netflix'
+database = os.getenv('DB_NAME')
 sslmode = 'require'  # Neon requires SSL
 
 ## run the connection function 
